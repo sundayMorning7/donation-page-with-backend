@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Donate</title>
+  </head>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Donate</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="img/favicon.png"> -->
+    <!-- Place favicon.png in the root directory -->
+    
+    <link href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' rel='stylesheet'>
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet'>
+    
+    <script type='text/javascript' src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    
+    <style> 
+      @import url(http://fonts.googleapis.com/css?family=Calibri:400,300,700);
+      body {
+      /* background-color: #D32F2F; */
+      font-family: 'Calibri', sans-serif !important
+      }
+
+      .mt-100 {
+      margin-top: 100px
+      }
+
+      main {
+      }
+      .causes-details {
+        height: 100%
+      }
+      .container {
+        height: 100%;
+      }
+
+      @media (max-width: 992px) {
+        .container {
+          margin-top: 170;
+          margin-bottom: 100px;
+        }
+      }
+
+      .card {
+      position: relative;
+      display: flex;
+      width: 450px;
+      flex-direction: column;
+      min-width: 0;
+      word-wrap: break-word;
+      background-color: #fff;
+      background-clip: border-box;
+      border: 1px solid #d2d2dc;
+      border-radius: 4px;
+      -webkit-box-shadow: 0px 0px 5px 0px rgb(249, 249, 250);
+      -moz-box-shadow: 0px 0px 5px 0px rgba(212, 182, 212, 1);
+      box-shadow: 0px 0px 5px 0px rgb(161, 163, 164)
+      }
+
+      .card .card-body {
+      padding: 1rem 1rem
+      }
+
+      .card-body {
+      flex: 1 1 auto;
+      padding: 1.25rem
+      }
+
+      p {
+      font-size: 14px
+      }
+
+      h4 {
+      margin-top: 18px
+      }
+
+      .cross {
+      padding: 10px;
+      color: #d6312d;
+      cursor: pointer
+      }
+
+      .continue:focus {
+      outline: none
+      }
+
+      .continue {
+      border-radius: 5px;
+      text-transform: capitalize;
+      font-size: 13px;
+      padding: 8px 19px;
+      cursor: pointer;
+      color: #fff;
+      background-color: #D50000
+      }
+
+      .continue:hover {
+      background-color: #D32F2F !important
+      }
+      </style>
+    <style>
+      ::placeholder {
+        opacity: 0.5; 
+      }
+      ::-ms-input-placeholder {
+        opacity: 0.5; 
+      }
+      ::-ms-input-placeholder {
+        opacity: 0.5; 
+      }
+      /* 1. default css */
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 16px;
+      }
+
+      button:focus,
+      input:focus,
+      input:focus,
+      textarea,
+      textarea:focus {
+        outline: 0;
+      }
+
+      ul {
+        margin: 0px;
+        padding: 0px;
+      }
+      li {
+        list-style: none;
+      }
+      p {
+        font-size: 16px;
+        font-weight: normal;
+        line-height: 24px;
+        color: #5f7b97;
+        margin-bottom: 15px;
+      }
+
+      /* button style */
+      .thm-btn {
+        z-index: 1;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 18px 35px;
+        text-align: center;
+        position: relative;
+        letter-spacing: 2px;
+        color: #fefefe;
+        text-transform: uppercase;
+        background-color: #79c55d;
+        font-weight: 700;
+        display: inline-block;
+      }
+      .thm-btn:hover {
+        color: #ffff;
+        cursor: pointer;
+      }
+
+      .thm-btn::before {
+        top: 0px;
+        width: 0px;
+        left: auto;
+        right: 0px;
+        z-index: -1;
+        bottom: 0px;
+        content: '';
+        position: absolute;
+        background-color: #39bdb3;
+        transition: all 0.3s ease-in-out;
+        -webkit-transition: all 0.3s ease-in-out;
+        -moz-transition: all 0.3s ease-in-out;
+        -ms-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+      }
+      .thm-btn:hover::before {
+        left: 0px;
+        width: 100%;
+        right: auto;
+      }
+
+      .thm-btn-3 {
+        background-color: #f1894c;
+      }
+      .thm-btn-3::before {
+        background-color: #fa7629;
+      }
+
+      /* donate */
+      .donate-amount .custom-donate {
+        display: flex;
+        flex-wrap: wrap;
+        position: relative;
+      }
+      .donate-amount ul {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .donate-amount {
+        margin-bottom: 10px;
+      }
+      .donate-title p {
+        position: relative;
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 28px;
+      }
+      .donate-title p span {
+        background: #ff566e;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        display: inline-block;
+        line-height: 20px;
+        font-size: 12px;
+        text-align: center;
+        color: #fff;
+        position: absolute;
+        left: 0;
+        top: 2px;
+      }
+      .donate-title h3 {
+        font-size: 30px;
+        margin-bottom: 10px;
+      }
+      .donate-amount .custom-donate span {
+        display: inline-block;
+        top: 0px;
+        left: 0;
+        width: 55px;
+        height: 55px;
+        color: #fff;
+        text-align: center;
+        line-height: 55px;
+        font-size: 27px;
+        position: absolute;
+        content: '';
+        background: #39bdb3;
+      }
+      .donate-amount .custom-donate span span {
+        width: 55px;
+        height: 100%;
+        line-height: 55px;
+        top: 0px;
+        left: 0;
+      }
+      .donate-amount .custom-donate input {
+        width: 260px;
+        height: 55px;
+        margin: 0;
+        padding-left: 65px;
+        background: #fff;
+        border: 1px solid #e5e5e5;
+      }
+      .donate-amount .custom-donate input::-moz-placeholder {
+        color: #707070;
+        font-size: 20px;
+      }
+      .donate-amount .custom-donate input::placeholder {
+        color: #707070;
+        font-size: 20px;
+      }
+      @media (max-width: 575px) {
+        .donate-amount .custom-donate input {
+          margin-bottom: 20px;
+        }
+      }
+
+      .donate-amount ul li {
+        font-weight: 400;
+        border: 1px solid #e5e5e5;
+        padding: 13px 18px;
+        margin: 5px;
+        color: #0e2c53;
+        font-size: 16px;
+        cursor: pointer;
+        -webkit-transition: all ease 0.3s;
+        -moz-transition: all ease 0.3s;
+        transition: all ease 0.3s;
+        position: relative;
+      }
+      .donate-amount ul li:first-child {
+        margin-left: 0;
+      }
+      .donate-amount ul li:last-child {
+        margin-right: 0;
+      }
+      @media (max-width: 768px) {
+        .donate-amount ul li:last-child {
+          margin-left: 0;
+        }
+      }
+      .donate-amount ul li:hover {
+        color: #fff;
+        background: #39bdb3;
+        border-color: #39bdb3;
+      }
+      .donate-amount ul li:hover:after {
+        background: #39bdb3;
+      }
+      .donate-amount ul li:hover:before {
+        border-color: #39bdb3;
+      }
+      .donate-amount ul li.active {
+        color: #fff;
+        background: #39bdb3;
+        border-color: #39bdb3;
+      }
+      .donate-amount ul li.active:after {
+        background: #fff;
+      }
+      .donate-amount ul li.active:before {
+        border-color: #fff;
+      }
+
+      .give-form input,
+      .give-form textarea {
+        width: 100%;
+        height: 55px;
+        border: 0;
+        padding: 0 20px;
+        margin-bottom: 30px;
+        box-shadow: 0px 0px 10px 0px rgba(191, 212, 223, 0.35);
+      }
+      .give-form textarea {
+        height: 150px;
+        padding: 15px;
+      }
+      
+      .give-form label {
+        font-size: 15px;
+        color: #051f33;
+        margin-bottom: 12px;
+      }
+      .give-form label span {
+        color: red;
+      }
+    
+      .form-bottom .form-btn button,
+      .post-comment-form button {
+        cursor: pointer;
+        border: 0;
+      }
+      .form-bottom .form-rate p {
+        color: #051f33;
+        font-weight: 500;
+      }
+      .form-bottom .form-rate span {
+        color: #39bdb3;
+      }
+
+      @keyframes outer-ripple {
+        0% {
+          transform: scale(1);
+          filter: alpha(opacity=50);
+          opacity: 0.5;
+          -webkit-transform: scale(1);
+          -moz-transform: scale(1);
+          -ms-transform: scale(1);
+          -o-transform: scale(1);
+        }
+        80% {
+          transform: scale(2.5);
+          filter: alpha(opacity=0);
+          opacity: 0;
+          -webkit-transform: scale(2.5);
+          -moz-transform: scale(2.5);
+          -ms-transform: scale(2.5);
+          -o-transform: scale(2.5);
+        }
+        100% {
+          transform: scale(3.5);
+          filter: alpha(opacity=0);
+          opacity: 0;
+          -webkit-transform: scale(3.5);
+          -moz-transform: scale(3.5);
+          -ms-transform: scale(3.5);
+          -o-transform: scale(3.5);
+        }
+      }
+
+      /*additional styling*/
+      main {
+        margin-top: 60px;
+        margin-bottom: 60px;
+      }
+
+      /* Large Mobile :480px. */
+      @media only screen and (min-width: 480px) and (max-width: 767px) {
+        .container {
+          width: 450px;
+        }
+      }
+
+      
+    </style>
+  <body>
+    <!-- <header style="min-height: 60px; background-color: black"></header> -->
+    <main>
+      <section class="causes-details ">
+        <div class="container d-flex flex-wrap align-content-lg-center">
+          <div class="row justify-content-center">
+            <div class="col-12">
+              <div class="causes-dtls-content">
+                <div class="donate-amount mb-35">
+                  <div
+                    class="donate-title mb-35"
+                  >
+                    <h3>Donate now</h3>
+                    <p><span>1</span> Choose the amount of your donation</p>
+                  </div>
+                  <div
+                    class="custom-donate mt-30 mb-30"
+                  >
+                    <span><span>£</span></span>
+                    <input id="custom-amount-input" type="number" min="5.00" max="100000.00" step="0.1" placeholder="10"/>
+                  </div>
+                  <ul
+                    class="amount mb-30"
+                  >
+                    <li>50 £</li>
+                    <li class="active">250 £</li>
+                    <li>500 £</li>
+                    <li>Custom Amount</li>
+                  </ul>
+                </div>
+               
+                <form class="give-form" action="#">
+                  <div
+                    class="form-title"
+                  >
+                    <h3>Personal Info!</h3>
+                  </div>
+                  <div
+                    class="row"
+                  >
+                  <!-- value="Vlad" -->
+                    <div class="col-xl-4 col-lg-4">
+                      <label>First Name<span>*</span></label>
+                      <input required minlength="2" type="text" name="fname" placeholder="Your Name"/>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                      <label>Last Name<span>*</span></label>
+                      <input required minlength="2" type="text" name="lname" placeholder="Your Last Name"/>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                      <label>Email Address<span></span></label>
+                      <input
+                        type="email"
+                        name="email"
+                        placeholder="Your email"
+                      />
+                    </div>
+                    
+                      <label>Comment</label>
+                      <textarea
+                        name="message"
+                        id="message"
+                        cols="30"
+                        rows="10"
+                        placeholder="Leave us a comment"
+                      ></textarea>
+                    </div>
+                    <div class="col-xl-12">
+                      <div
+                        class="
+                          form-bottom
+                          d-flex
+                          flex-wrap
+                          align-items-center
+                          justify-content-between
+                          w-100
+                        "
+                      >
+                        <div class="form-btn mb-30">
+                          <button id="pay-button" class="thm-btn thm-btn-3" type="submit">
+                            Donate Now
+                          </button>
+                        </div>
+                        <div class="form-rate mb-30">
+                          <p>Total Donation <span id="total-amount"></span><span>&nbsp;£</span></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="card">
+                <div class="text-right cross"> <i class="fa fa-times"></i> </div>
+                <div class="card-body text-center"> <img src="https://img.icons8.com/bubbles/200/000000/trophy.png">
+                    <h4>CONGRATULATIONS!</h4>
+                    <p>We’ve got a lot of work ahead of us, and your donation has made it so much easier to get things done and thrust us forward. We thank you for your support and for your desire to help us succeed in this venture.</p> <button class="btn btn-out btn-square continue">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="modal fade" id="myErrorModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="card">
+                <div class="text-right cross"> <i class="fa fa-times"></i> </div>
+                <div class="card-body text-center"> <img src="https://img.icons8.com/bubbles/2x/error.png">
+                    <h4 id='error-msg'></h4>
+                    <!-- <p>Please, try again.</p>  -->
+                    <button class="btn btn-out btn-square continue">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+    <!-- <footer style="min-height: 60px; background-color: black"></footer> -->
+
+    <!-- bootstrap.bundle.min.js -->
+    <script type='text/javascript' src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js'></script>
+
+    <!-- Load RevolutCheckout -->
+    <script>
+      !(function (e, o, t) {
+        e[t] = function (n, r) {
+          var c = {
+              sandbox: 'https://sandbox-merchant.revolut.com/embed.js',
+              prod: 'https://merchant.revolut.com/embed.js',
+              dev: 'https://merchant.revolut.codes/embed.js',
+            },
+            d = o.createElement('script');
+          (d.id = 'revolut-checkout'),
+            (d.src = c[r] || c.prod),
+            (d.async = !0),
+            o.head.appendChild(d);
+          var s = {
+            then: function (r, c) {
+              (d.onload = function () {
+                r(e[t](n));
+              }),
+                (d.onerror = function () {
+                  o.head.removeChild(d),
+                    c && c(new Error(t + ' is failed to load'));
+                });
+            },
+          };
+          return 'function' == typeof Promise ? Promise.resolve(s) : s;
+        };
+      })(window, document, 'RevolutCheckout');
+    </script>
+
+    <!-- My script: donation + interactivity on page -->
+    <script>
+      // Example starter JavaScript for disabling form submissions if there are invalid fields
+    (() => {
+      'use strict';
+
+      const env = 'dev' || 'prod';
+      const backend_api = 'http://localhost:3000'
+
+      function validateData(data) {
+        var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+        if(data.fname.length < 2)
+        {
+          document.getElementsByName('fname')[0].focus();
+          throw Error('Length of first name must be >= 2.');
+        }
+        if(data.lname.length < 2) {
+          document.getElementsByName('lname')[0].focus();
+          throw Error('Length of last name must be >= 2.');
+        }
+        if(data.email.length && !data.email.match(validRegex)) {
+          document.getElementsByName('email')[0].focus()
+          throw Error('Email is incorrect.');
+        }
+        
+        if (data.amount == '') {
+          document.getElementById('custom-amount-input').focus()
+          throw Error(`Donation amount isn't specified.`);
+        } 
+        const totalAmount = parseFloat(
+            data.amount,
+            10
+          ).toFixed(2) * 100
+        if(totalAmount<5||totalAmount>100000) {
+          totalAmountEl.focus()
+          throw Error(`Change donation amount. >= 5 <= 10 000`);
+        }
+      }
+      
+      function getData() {
+        return {
+          "fname": document.getElementsByName('fname')[0].value,
+          "lname": document.getElementsByName('lname')[0].value,
+          "email": document.getElementsByName('email')[0].value,
+          "amount": document.getElementById('total-amount').innerHTML.split(' ')[0]
+        }
+      }
+      
+      function createOrder() {
+        const data = getData()
+        validateData(data)
+        const totalAmount = parseFloat(
+            data.amount,
+            10
+          ).toFixed(2) * 100
+        return fetch(backend_api + '/create-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({
+            ...data,
+            amount: totalAmount,
+            currency: 'GBP',
+          }),
+        });
+      }
+      function cancelOrder(orderId) {
+        return fetch(backend_api + '/cancel-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({orderId}),
+        });
+      }
+      function confirmOrder(orderId) {
+        return fetch(backend_api + '/confirm-order', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          },
+          body: JSON.stringify({orderId}), // , ...getData() sending data again to get email and name
+        });
+      }
+      function donate(response) {
+        console.log('create order response.json()', response);
+        RevolutCheckout(response.public_id, 'sandbox').then(function (RC) {
+          // On click open payment pop-up
+            RC.payWithPopup({
+              // (mandatory!) name of the cardholder
+              name: response.full_name,
+              email: response.email,
+              savePaymentMethodFor: 'merchant',
+              onSuccess() {
+                setTimeout(()=>{
+                  try {
+                    RC.destroy();
+                  } catch (error) {
+                    console.log(error);
+                  }
+                }, 150)
+                setTimeout(()=>{
+                      confirmOrder(response.id)
+                      $('#myModal').modal('show');
+                }, 200)
+              },
+              onError(message) {
+                  setTimeout(()=>{
+                        cancelOrder(response.id)
+                        document.getElementById("error-msg").innerHTML = message
+                        $('#myErrorModal').modal('show');
+                  }, 450)
+                  console.log(message);
+              },
+              onCancel() {
+                cancelOrder(response.id)
+              },
+            });
+          })
+        }
+
+
+      function registerEventHandlers() {
+        const payBtn = document.getElementById('pay-button');
+        payBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          createOrder()
+          .then((r) => {
+            console.log(r);
+            return r.json()
+          })
+          .then(donate)
+          .catch(e=>{
+            // maybe notify
+          })
+        });
+        document.getElementById('total-amount').innerHTML = document.querySelector('ul > li.active').innerHTML.split(' ')[0] // set total amount to whatever is active in the beginning. It will be refreshed later.
+        const customAmountInput = document.querySelector('.custom-donate>input');
+        customAmountInput.addEventListener('keyup', (e)=>{
+          e.srcElement.value = 
+                    !!e.srcElement.value && Math.abs(e.srcElement.value) > 0 ? Math.abs(e.srcElement.value) : null
+        })
+        customAmountInput.addEventListener('change', (e) => {
+          const amount = Math.abs(customAmountInput.value) < 5 ?  '5' : customAmountInput.value;
+          customAmountInput.value = amount.toString()
+          const selectedLi = document.querySelector('ul.amount > li.active');
+          if (
+            selectedLi.classList.contains('active') &&
+            selectedLi.innerHTML == 'Custom Amount'
+          ) {
+            document.getElementById('total-amount').innerHTML = amount;
+          }
+        });
+        document.querySelector('ul.amount').addEventListener('click', (e) => {
+          const el = e.target;
+          if (el.tagName == 'LI') {
+            // console.log(el.classList);
+            document
+              .querySelector('ul.amount > li.active')
+              .classList.remove('active');
+            el.classList.add('active');
+
+            // if not custom amount
+            let amount = '';
+            if (el.innerHTML == 'Custom Amount') {
+              amount = document.querySelector('.custom-donate>input').value;
+            } else {
+              amount = el.innerHTML.split(' ')[0];
+            }
+            document.getElementById('total-amount').innerHTML = amount;
+          }
+        });
+      }
+      
+      registerEventHandlers();
+    })();
+    </script>
+
+  </body>
+</html>
